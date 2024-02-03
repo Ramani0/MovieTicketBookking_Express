@@ -1,0 +1,233 @@
+<form action="/book" method="post">
+<div id="body">
+    <div class="movie-container">
+      <h2 style="color: black;">HomeBoxOffice</h2>
+      <label>Select a Movie:</label>
+      <select id="movie">
+        <option value="Select a movie">Select a Movie</option>
+        <option value="15">Leo</option>
+        <option value="10">Tiger 3</option>
+        <option value="12">Rangoli</option>
+        <option value="8">Kick</option>
+        <option value="8">Dainosar</option>
+      </select>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+<div id="rows">
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat "></div>
+        <div class="seat "></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div><div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+</div>
+    <p class="text">
+  You have selected <span id="count">0</span> movies for the price of $<span id="total">0</span>
+</p>
+
+<button type="submit" class="btn btn-outline-primary" id="createAccountBtn">BOOK NOW</button>
+
+<script>
+  document.getElementById('createAccountBtn').addEventListener('click', function() {
+    const count = document.getElementById('count').textContent;
+    const total = document.getElementById('total').textContent;
+
+    // Send the data to the server via a POST request
+    fetch('/book', {
+      method: 'POST',
+      body: JSON.stringify({ count, total }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response from the server, if needed
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });
+</script>
+
+
+
+
+
+    <!-- <script src="script.js"></script> -->
+    <script src="/javascripts/h.js"></script>
+</div>
+<br><br>
+<h1 style="text-align: center;">TODAYS OFFER</h1>
+<section>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card card_red text-center">
+            <div class="title">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+              <h2>Basic</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>25</h4>
+            </div>
+            <div class="option">
+              <ul>
+                <li><i class="fa fa-check" aria-hidden="true"></i>First</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i> Show</li>
+
+                </ul>
+            </div>
+            <a href="#">Book Now</a>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card card_violet text-center">
+            <div class="title">
+              <i class="fa fa-plane" aria-hidden="true"></i>
+              <h2>Premium</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>25</h4>
+            </div>
+            <div class="option">
+              <ul>
+
+                <li><i class="fa fa-check" aria-hidden="true"></i>Second</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i> Show</li>
+
+                </ul>
+            </div>
+            <a href="#">Book Now</a>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="card card_third text-center">
+            <div class="title">
+              <i class="fa fa-plane" aria-hidden="true"></i>
+              <h2>Ultra Premium</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>25</h4>
+            </div>
+            <div class="option">
+              <ul>
+             
+                <li><i class="fa fa-check" aria-hidden="true"></i>Third </li>
+                <li><i class="fa fa-check" aria-hidden="true"></i> Show</li>
+              
+                </ul>
+            </div>
+            <a href="#">Book Now</a>
+          </div>
+        </div>
+
+
+        <div class="col-sm-3">
+          <div class="card card_three text-center">
+            <div class="title">
+              <i class="fa fa-rocket" aria-hidden="true"></i>
+              <h2>Standart</h2>
+            </div>
+            <div class="price">
+              <h4><sup>$</sup>50</h4>
+            </div>
+            <div class="option">
+              <ul>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Fourth </li>
+                <li><i class="fa fa-check" aria-hidden="true"></i> Show</li>
+                </ul>
+            </div>
+            <a href="#">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</form>
+
